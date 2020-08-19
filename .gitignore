@@ -34,9 +34,6 @@ db.sqlite3-journal
 media
 Facemask.h5
 images
-user
-blog
-classifier
 cb-key.pem
 .env
 

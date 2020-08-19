@@ -1,0 +1,23 @@
+.back {
+  background: gray;
+  border: dashed black;
+}
+
+.back:hover {
+  border: dashed blue;
+}
+
+#blog-card {
+  width: 26rem !important;
+}
+
+#card-button {
+  position: absolute;
+  right: 73%;
+  bottom: 3%;
+}
+
+#blog-page-image {
+  height: 40% auto;
+  width: 30% auto;
+}

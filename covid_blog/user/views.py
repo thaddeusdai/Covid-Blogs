@@ -72,6 +72,6 @@ class ForgotPassword(generics.GenericAPIView):
             random.randint(97, 123))+chr(random.randint(97, 123)) + str(random.randint(1000, 1000000))
         user.set_password(temp_password)
         user.save()
-        send_mail(f'Password for {user.username}', f'The temporary password for your account is {temp_password}',
+        send_mail(f'Password for {user.username}', f'The new password for your account is {temp_password}. Please change your password once logged in to a password you can remember.',
                   'todoproject1234@gmail.com', [f'{user.email}'], fail_silently=False)
         return Response({'message': 'Email has been sent'})

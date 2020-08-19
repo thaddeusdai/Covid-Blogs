@@ -1,4 +1,4 @@
-from blog.permissions import ModifyOwnBlogAndComments, OnlyAdminCanModify
+from blog.permissions import OnlyAdminCanModify
 from rest_framework import viewsets, permissions, mixins
 
 from core.models import Blog, Tag, Comment
@@ -67,5 +67,5 @@ class CommentViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(blog__id=blogcomment)
 
         if order:
-            return queryset.order_by('-likes', '-id')
+            return queryset.order_by('-likes')
         return queryset.order_by('id')

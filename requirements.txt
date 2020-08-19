@@ -1,0 +1,13 @@
+Django==3.0.7
+djangorestframework==3.11.0
+django-rest-knox==4.1.0
+numpy==1.18.0
+tensorflow==2.0.0
+pandas==1.1.0
+keras==2.4.3
+Pillow==7.2.0
+psycopg2==2.8.5
+psycopg2-binary==2.8.5
+matplotlib==3.3.1
+sklearn==0.0
+opencv-python==4.4.0.42

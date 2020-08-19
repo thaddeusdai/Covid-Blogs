@@ -1,0 +1,17 @@
+#createBlog {
+  position: absolute;
+  left: 45%;
+}
+
+.blog-content {
+  font-size: 24px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.spinner {
+  height: 10rem;
+  width: 10rem;
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 10%;
+}

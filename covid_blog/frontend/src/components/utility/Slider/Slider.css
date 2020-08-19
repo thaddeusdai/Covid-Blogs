@@ -1,0 +1,55 @@
+.slick .slick-prev:before,
+.slick .slick-next:before {
+  font-size: 30px;
+}
+.slick .slick-track {
+  display: flex;
+}
+.slick .slick-track .slick-slide {
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.slick .slick-arrow {
+  z-index: 100;
+}
+
+.slick .slick-arrow.slick-prev {
+  left: 15px;
+}
+
+.slick .slick-arrow.slick-next {
+  right: 25px;
+}
+
+#blogs {
+  background: url("http://www.cdc.gov/coronavirus/2019-ncov/images/Coronavirus-badge-300.png");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+}
+
+#healblogs {
+  background: url("http://www.cdc.gov/coronavirus/2019-ncov/travelers/images/COVID-19-Domestic-Travel-Badge_300x250.jpg");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+}
+
+#ablogs {
+  background: url("https://thumbs.dreamstime.com/b/variety-medical-healthcare-workers-wearing-face-masks-amidst-coronavirus-pandemic-176500673.jpg");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+}
+
+#hospblogs {
+  background: url("https://thumbs.dreamstime.com/b/coronavirus-china-wuhan-vials-virus-could-be-dangerours-deadly-as-sars-172484195.jpg");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+}
+
+#qblogs {
+  background: url("https://thumbs.dreamstime.com/b/home-disinfection-cleaning-service-surface-treatment-coronavirus-steam-disinfection-home-disinfection-cleaning-service-176781852.jpg");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+}
+
+#search {
+  background: transparent !important;
+}

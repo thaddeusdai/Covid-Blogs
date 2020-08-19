@@ -1,0 +1,25 @@
+.homepage {
+  background: url("https://images.unsplash.com/photo-1588778246422-031bbc452da6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80");
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.85);
+  min-height: 100% !important;
+  position: absolute;
+  width: 100% !important;
+  min-width: 100%;
+}
+
+.back {
+  background: grey;
+  border: 3px dashed white;
+  border-radius: 5px;
+  margin: 10px 5px;
+  padding: 10px 5px;
+}
+
+.back:hover {
+  border: 3px dashed blue;
+}
+
+#imageClassifier {
+  max-width: 50% !important;
+  max-height: 200px !important;
+}

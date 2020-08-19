@@ -1,0 +1,12 @@
+li.nav-item {
+  list-style-type: none;
+}
+
+.input-label {
+  margin-right: 5px auto !important;
+  margin-left: 15px auto !important;
+}
+#searchbar1,
+#searchbar2 {
+  margin-left: 15px;
+}

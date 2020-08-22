@@ -129,7 +129,8 @@ class PrivateBlogTest(TestCase):
             }
 
             resp = self.client.post(BLOGS, payload)
-        resp = self.client.get(get_blog(1))
+        blog = models.Blog.objects.filter(title="Title")[0]
+        resp = self.client.get(get_blog(blog.id))
 
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
 
@@ -151,7 +152,8 @@ class PrivateBlogTest(TestCase):
         new = {
             'title': 'new_title'
         }
-        resp = self.client.patch(get_blog(1), new)
+        blog = models.Blog.objects.filter(title="Title")[0]
+        resp = self.client.patch(get_blog(blog.id), new)
 
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         self.assertEqual(resp.data['title'], new['title'])
@@ -266,6 +268,7 @@ class PrivateBlogTest(TestCase):
         self.assertIsNotNone(blog.tags.get(name='tag1'))
 
     def test_uploading_blogs_with_tags(self):
+        tag = models.Tag.objects.create(name='tag1')
         with tempfile.NamedTemporaryFile(suffix='.jpg') as ntf:
             img = Image.new('RGB', (10, 10))
             img.save(ntf, format='JPEG')
@@ -305,7 +308,7 @@ class PrivateBlogTest(TestCase):
                 'tags': ['tag2']
             }
             self.client.post(BLOGS, payload2)
-        resp = self.client.get(BLOGS, {'tag': 1})
+        resp = self.client.get(BLOGS, {'tag': tag.id})
         self.assertEqual(len(resp.data), 1)
         self.assertEqual(resp.data[0]['title'], 'Title')
 

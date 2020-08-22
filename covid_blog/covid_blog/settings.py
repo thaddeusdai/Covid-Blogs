@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 from dotenv import load_dotenv
 import os
-
+load_dotenv()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h+8m!ouq@jsw*ri6dy=u-*m_o9@$-e+xz9lp)(7kuvp%7o7=*3'
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -87,8 +87,11 @@ WSGI_APPLICATION = 'covid_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ["NAME"],
+        'USER': os.environ['USER'],
+        'PASSWORD': os.environ["PASSWORD"],
+        'HOST': os.environ["HOST"],
     }
 }
 
@@ -136,7 +139,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'images').replace('\\', '/')
 AUTH_USER_MODEL = 'core.User'
 
 # email backend
-load_dotenv()
+
 
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_PORT = 587

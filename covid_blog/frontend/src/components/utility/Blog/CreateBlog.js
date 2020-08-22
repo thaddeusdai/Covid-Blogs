@@ -66,7 +66,9 @@ class CreateBlog extends Component {
       }
     }
     form.append("content", this.state.content);
-    form.append("tags", tags);
+    if (tags.length > 0) {
+      form.append("tags", tags);
+    }
     form.append("title", this.state.title);
     if (this.state.files[0]) {
       form.append("image", this.state.files[0], this.state.files[0].name);

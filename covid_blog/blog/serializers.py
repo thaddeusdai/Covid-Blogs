@@ -69,10 +69,11 @@ class CreateBlogSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=100)
     content = serializers.CharField(max_length=10000)
     tags = serializers.ListField(write_only=True, required=False, default=[])
-    image = serializers.ImageField()
+    image = serializers.ImageField(required=False)
 
     def create(self, validated_data):
-        if len(validated_data['tags']) > 0:
+        print(validated_data)
+        if len(validated_data['tags']) > 0 and validated_data['tags'] != [',']:
             tags = validated_data['tags'][0].split(',')
         else:
             tags = []
@@ -81,6 +82,7 @@ class CreateBlogSerializer(serializers.Serializer):
         for i in tags:
             tag = Tag.objects.filter(name=i).first()
             blog.tags.add(tag)
+        print(blog)
         return blog
 
 

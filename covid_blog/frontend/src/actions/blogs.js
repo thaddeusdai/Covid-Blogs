@@ -9,6 +9,7 @@ export const createBlog = (form) => async (dispatch, getState) => {
       Authorization: `Token ${getState().auth.token}`,
     },
   };
+  console.log(form);
   await axios
     .post("api/blogs/blog/", form, header)
     .then((resp) => {
@@ -20,7 +21,6 @@ export const createBlog = (form) => async (dispatch, getState) => {
       dispatch({ type: "SUCCESS", payload: "Blog Created!" });
     })
     .catch((err) => {
-      console.log(err.data);
       const errors = {
         msg: err.response.data,
         status: err.response.status,

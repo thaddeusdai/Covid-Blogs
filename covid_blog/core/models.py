@@ -78,7 +78,8 @@ class Blog(models.Model):
     content = models.CharField(max_length=10000)
     tags = models.ManyToManyField('Tag', blank=True)
     uploaded = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(null=True, upload_to=upload_path_blog)
+    image = models.ImageField(null=True, blank=True,
+                              upload_to=upload_path_blog)
 
     REQUIRED_FIELDS = ('title', 'content')
 

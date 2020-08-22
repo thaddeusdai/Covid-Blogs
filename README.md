@@ -17,3 +17,8 @@ Video Demo: https://www.youtube.com/watch?v=Vy-4WR6H75I&t=11s
   - USER
   - PASSWORD
   - HOST
+- Must create own admin user and add the following into the Tags table:
+  - Quarantine
+  - Awareness
+  - Health
+  - Hospital
